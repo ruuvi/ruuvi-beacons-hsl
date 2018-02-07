@@ -10,7 +10,9 @@ such as hardware and firmware version and serial number, configuring is protecte
 Configuring the beacon is done via Nordic UART Service, NUS.
 The NUS is described in [Nordic Infocenter](http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v12.3.0/structble__nus__c__s.html?resultof=%22%6e%75%73%22%20%22%6e%75%22%20). 
 
-Only iBeacon transmissions are configurable.
+It is possible to configure iBeacon UUID, minor and major IDs as well as received power field. 
+Additionally sensor data and health advertisements can be sent for diagnostic purposes. 
+Configuration protocol is described in a [separate document](./ibeacon_configuration.pdf).
 
 ### Buttonless DFU Service
 Buttonless DFU service is used to put tag into bootloader mode. Please see [Nordic's specification](https://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v14.2.0/group__ble__dfu.html?cp=4_0_0_6_3_8) for details of the service. 
@@ -33,7 +35,8 @@ A passcode must be entered via NUS service before configuring the device? TODO: 
 ### iBeacon
 The tags are identified with iBeacon data format as described in [Apple's developer documentation](https://developer.apple.com/ibeacon/Getting-Started-with-iBeacon.pdf)
 
-The sensor is in connectable and discoverable mode for configuration and firmware updating. 
+The sensor is in connectable and discoverable mode for configuration and firmware updating for a TBD time after boot and
+NFC read.
 
 Transmission power is TBD dBm and transmission interval is TBD ms. 
 
@@ -45,7 +48,7 @@ Transmission power is same as with iBeacon format, transmission interval is TBD.
 
 # NFC interface
 The tags will ship without a plastic cover in the battery, in deep sleep. NFC field will activate the tag. 
-The tag will transmit it's ID via NFC upon activation.
+The tag will transmit its ID via NFC upon activation.
 
 # Flash storage
 Settings are stored to flash and loaded on boot. This allows setup to survive possible power distruption caused by shock or
