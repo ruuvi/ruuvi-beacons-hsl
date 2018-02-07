@@ -8,7 +8,7 @@ such as hardware and firmware version and serial number, configuring is protecte
 ## Connectable GATT profile
 ### Configuration service
 Configuring the beacon is done via Nordic UART Service, NUS.
-The NUS is described in [Nordic Infocenter](http://infocenter.nordicsemi.com/topic/com.nordic.infocenter.sdk5.v12.3.0/structble__nus__c__s.html?resultof=%22%6e%75%73%22%20%22%6e%75%22%20). 
+The NUS is described in [Nordic Infocenter](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.sdk52.v0.9.2%2Fble_sdk_app_nus_eval.html).
 
 It is possible to configure iBeacon UUID, minor and major IDs as well as received power field. 
 Additionally sensor data and health advertisements can be sent for diagnostic purposes. 
